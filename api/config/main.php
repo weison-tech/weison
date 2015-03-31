@@ -45,7 +45,8 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/file','v1/share','v1/post', 'v1/comment', 'v2/post']],
+                ['class' => 'yii\rest\UrlRule', 
+                'controller' => ['v1/file','v1/share','v1/post', 'v1/comment', 'v2/post']],
                 'v1/user/login' => 'v1/user/login',
                 'v1/user/register' => 'v1/user/register',
                 'POST v2/user/login' => 'v2/user/login',
