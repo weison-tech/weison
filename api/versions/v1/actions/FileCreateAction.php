@@ -21,14 +21,10 @@ use yii\rest\Action;
  */
 class FileCreateAction extends Action
 {
-    /**
-     * @var string the scenario to be assigned to the new model before it is validated and saved.
-     */
-    public $scenario = Model::SCENARIO_DEFAULT;
+
     /**
      * @var string the name of the view action. This property is need to create the URL when the model is successfully created.
      */
-    public $viewAction = 'view';
 
     public $modelClass = 'api\versions\v1\models\File';
 
@@ -41,26 +37,31 @@ class FileCreateAction extends Action
     public function run()
     {
 
-        echo "dafasdf";
-        // if ($this->checkAccess) {
-        //     call_user_func($this->checkAccess, $this->id);
-        // }
+        /* @var $model \yii\db\ActiveRecord */
+        $model = new $this->modelClass();
 
-        // /* @var $model \yii\db\ActiveRecord */
-        // $model = new $this->modelClass([
-        //     'scenario' => $this->scenario,
-        // ]);
+        $p = Yii::$app->getRequest()->getBodyParams();
 
-        // $model->load(Yii::$app->getRequest()->getBodyParams(), '');
-        // if ($model->save()) {
-        //     $response = Yii::$app->getResponse();
-        //     $response->setStatusCode(201);
-        //     $id = implode(',', array_values($model->getPrimaryKey(true)));
-        //     $response->getHeaders()->set('Location', Url::toRoute([$this->viewAction, 'id' => $id], true));
-        // } elseif (!$model->hasErrors()) {
-        //     throw new ServerErrorHttpException('Failed to create the object for unknown reason.');
-        // }
-
-        // return $model;
+        if ($_FILES["file"]["error"] > 0){
+            echo "Error: " . $_FILES["file"]["error"] . "<br />";
+        }else{   
+            $folder = Yii::$app->params['imgFolder']."/".date('Ymd');
+            if(!is_dir($folder)){
+                mkdir($folder);
+                chmod($folder,0777);
+            }
+            $tmp = explode(".", $_FILES["file"]["name"]);
+            $ext = $tmp[count($tmp)-1];
+            $fileName = md5(uniqid(rand())).".".$ext;            
+            if(move_uploaded_file($_FILES["file"]["tmp_name"], $folder."/".$fileName)){
+                $model->user_id = $p['user_id'];
+                $model->media_url = date('Ymd')."/".$fileName;
+                $model->type = 1;
+                $model->save(false);
+                print_r(json_encode(array('file_id'=>$model->id,'media_url'=>Yii::$app->params['imgUrl']."/".$model->media_url)));
+            }else{
+                echo"移动文件失败";
+            }
+        }
     }
 }

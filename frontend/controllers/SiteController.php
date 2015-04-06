@@ -168,4 +168,22 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionTest()
+    {
+        // $uri = "http://api.chayuancun.com/v1/files";
+        // $data = array("user_id"=>1);
+        // $ch = curl_init ();
+        // // print_r($ch);
+        // curl_setopt ( $ch, CURLOPT_URL, $uri );
+        // curl_setopt ( $ch, CURLOPT_POST, 1 );
+        // curl_setopt ( $ch, CURLOPT_HEADER, 0 );
+        // curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
+        // curl_setopt ( $ch, CURLOPT_POSTFIELDS, $data );
+        // $return = curl_exec ( $ch );
+        // curl_close ( $ch );
+
+        // print_r($return);
+        return $this->render('test');
+    }
 }
