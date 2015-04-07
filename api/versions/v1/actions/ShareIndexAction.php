@@ -8,10 +8,7 @@
 namespace api\versions\v1\actions;
 
 use Yii;
-use yii\base\Model;
-use yii\helpers\Url;
-use yii\web\ServerErrorHttpException;
-use yii\rest\Action;
+use yii\rest\IndexAction;
 
 /**
  * CreateAction implements the API endpoint for creating a new model from the given data.
@@ -19,7 +16,7 @@ use yii\rest\Action;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class ShareIndexAction extends Action
+class ShareIndexAction extends IndexAction
 {
 
     /**
@@ -36,6 +33,6 @@ class ShareIndexAction extends Action
      */
     public function run()
     {
-    	return "daasfasdf";
+    	return $this->prepareDataProvider();
     }
 }

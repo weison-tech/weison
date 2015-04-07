@@ -1,6 +1,9 @@
 <?php
 namespace api\versions\v1\models;
 use \yii\db\ActiveRecord;
+use yii;
+use \api\versions\v1\models\User;
+use \api\versions\v1\models\File;
 /**
  * Share Model
  *
@@ -8,6 +11,32 @@ use \yii\db\ActiveRecord;
  */
 class Share extends ActiveRecord 
 {
+            public function fields()
+            {
+                        return [
+                                    // field name is the same as the attribute name
+                                    'id',                                   
+                                    'username' => function(){
+                                            return isset($this->user) ? $this->user->username : '';
+                                    },
+                                    'create_at',
+                                    'media_url' => function(){
+                                            return isset($this->file) ? Yii::$app->params['imgUrl']."/".$this->file->media_url : '';
+                                    },
+                                    'description',
+                        ];
+            }
+
+            public function getUser()
+            {
+                         return $this->hasOne(User::className(), ['id' => 'user_id']);
+            }
+
+            public function getFile()
+            {
+                         return $this->hasOne(File::className(), ['id' => 'file_id']);
+            }
+
 	/**
 	 * @inheritdoc
 	 */
