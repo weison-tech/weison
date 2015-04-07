@@ -15,12 +15,17 @@ class Share extends ActiveRecord
             {
                         return [
                                     // field name is the same as the attribute name
-                                    'id',                                   
+                                    'id',        
+                                    'avatar' => function(){
+                                            return "img/assets/fhrl.jpg";
+                                    },                      
                                     'username' => function(){
                                             return isset($this->user) ? $this->user->username : '';
                                     },
-                                    'create_at',
-                                    'media_url' => function(){
+                                    'createat'=> function(){
+                                            return $this->create_at;
+                                    },
+                                    'mediaurl' => function(){
                                             return isset($this->file) ? Yii::$app->params['imgUrl']."/".$this->file->media_url : '';
                                     },
                                     'description',
