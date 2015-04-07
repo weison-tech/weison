@@ -30,7 +30,8 @@ class Share extends ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'file_id'], 'required']
+           [['user_id', 'file_id'], 'required'],
+           ['description', 'string',  'max' => 99999999]
         ];
     }   
 }
