@@ -33,16 +33,16 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => Yii::t('yii', 'Home'), 'url' => ['/site/index']],
+                ['label' => '首页', 'url' => ['/site/index']],
                 // ['label' => 'About', 'url' => ['/site/about']],
                 // ['label' => 'Contact', 'url' => ['/site/contact']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Signup', 'url' => ['/user/registration/register']];
-                $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];
+                $menuItems[] = ['label' => '注 册', 'url' => ['/user/registration/register']];
+                $menuItems[] = ['label' => '登 录', 'url' => ['/user/security/login']];
             } else {
                 $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'label' => '退 出 (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/user/security/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ];
