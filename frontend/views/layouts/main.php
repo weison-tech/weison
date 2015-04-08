@@ -33,20 +33,20 @@ AppAsset::register($this);
                 ],
             ]);
             $menuItems = [
-                ['label' => '首 页', 'url' => ['/site/index']],
+                ['label' => Yii::t('yii', 'Home'), 'url' => ['/site/index']],
                 // ['label' => 'About', 'url' => ['/site/about']],
                 // ['label' => 'Contact', 'url' => ['/site/contact']],
             ];
-            // if (Yii::$app->user->isGuest) {
-            //     $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-            //     $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-            // } else {
-            //     $menuItems[] = [
-            //         'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            //         'url' => ['/site/logout'],
-            //         'linkOptions' => ['data-method' => 'post']
-            //     ];
-            // }
+            if (Yii::$app->user->isGuest) {
+                $menuItems[] = ['label' => 'Signup', 'url' => ['/user/registration/register']];
+                $menuItems[] = ['label' => 'Login', 'url' => ['/user/security/login']];
+            } else {
+                $menuItems[] = [
+                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'url' => ['/user/security/logout'],
+                    'linkOptions' => ['data-method' => 'post']
+                ];
+            }
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
