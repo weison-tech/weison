@@ -12,11 +12,4 @@ use yii\rest\ActiveController;
 class ShareController extends ActiveController
 {
 	public $modelClass = 'api\versions\v1\models\Share';
-
-	public function actions()
-	{
-		$actions = parent::actions();		
-		$actions['index'] = 'api\versions\v1\actions\ShareIndexAction';
-		return $actions;
-	}
 }
