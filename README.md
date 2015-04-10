@@ -14,7 +14,7 @@ The minimum requirement by this application template that your Web server suppor
 INSTALLATION
 ------------
 
-1, Use git clone command in your command line  this application to you directory:
+1, Use git clone command in your command line to clone  this application to you directory:
 
 ~~~
 git clone git@github.com:weison-tech/weison.git
