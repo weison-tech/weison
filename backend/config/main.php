@@ -13,10 +13,10 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
-        // 'user' => [
-        //     'identityClass' => 'common\models\User',
-        //     'enableAutoLogin' => true,
-        // ],
+        'user' => [
+            // following line will restrict access to admin page
+            'as backend' => 'dektrium\user\filters\BackendFilter',
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [

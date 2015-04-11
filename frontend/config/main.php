@@ -12,10 +12,10 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        // 'user' => [
-        //     'identityClass' => 'common\models\User',
-        //     'enableAutoLogin' => true,
-        // ],
+        'user' => [
+            // following line will restrict access to admin page
+            'as frontend' => 'dektrium\user\filters\FrontendFilter',
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
