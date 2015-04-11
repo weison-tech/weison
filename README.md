@@ -38,5 +38,5 @@ php init
 5, Update database schema for your user module
 
 ~~~
-$ php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
+$ php yii migrate/up --migrationPath=@vendor/weison-tech/yii2-user/migrations
 ~~~
