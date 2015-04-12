@@ -11,11 +11,13 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-    'components' => [
+    'modules' => [
         'user' => [
             // following line will restrict access to admin page
             'as frontend' => 'dektrium\user\filters\FrontendFilter',
         ],
+    ],
+    'components' => [        
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
