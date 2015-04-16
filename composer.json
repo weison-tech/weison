@@ -18,7 +18,8 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "weison-tech/yii2-user": "0.9.*@dev"
+        "weison-tech/yii2-user": "0.9.*@dev",
+        "weison-tech/weison-module-cms":"dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
