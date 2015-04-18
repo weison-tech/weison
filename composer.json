@@ -18,14 +18,15 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "weison-tech/yii2-user": "0.9.*@dev",
+        "weison-tech/yii2-user": "dev-master",
         "weison-tech/weison-module-cms":"dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
         "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-faker": "*"
+        "yiisoft/yii2-faker": "*",
+        "c006/yii2-migration-utility": "dev-master"
     },
     "config": {
         "process-timeout": 1800

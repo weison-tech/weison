@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2321fe61e77afce5f9e5d3138b5fd671",
+    "hash": "5411538fa7cd82b22a98eba434a1e858",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -1601,70 +1601,22 @@
             "time": "2015-04-16 07:21:18"
         },
         {
-            "name": "weison-tech/yii2-authclient",
-            "version": "2.3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/weison-tech/yii2-authclient.git",
-                "reference": "31d45f1028ee8c7e457f4c3ad333d568eef1a7ab"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/weison-tech/yii2-authclient/zipball/31d45f1028ee8c7e457f4c3ad333d568eef1a7ab",
-                "reference": "31d45f1028ee8c7e457f4c3ad333d568eef1a7ab",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\authclient\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "xiaomalover",
-                    "email": "xiaomalover@gmail.com"
-                }
-            ],
-            "description": "External authentication via OAuth and OpenID for the Yii framework",
-            "keywords": [
-                "OpenId",
-                "auth",
-                "oauth",
-                "yii2"
-            ],
-            "time": "2015-04-10 04:18:14"
-        },
-        {
             "name": "weison-tech/yii2-user",
-            "version": "dev-master",
+            "version": "v0.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weison-tech/yii2-user.git",
-                "reference": "826d4058d0be9f95e6ba8eec0c47de93843bc58b"
+                "reference": "891fe6c3957bde7f3a7893775fd304fc84140599"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weison-tech/yii2-user/zipball/826d4058d0be9f95e6ba8eec0c47de93843bc58b",
-                "reference": "826d4058d0be9f95e6ba8eec0c47de93843bc58b",
+                "url": "https://api.github.com/repos/weison-tech/yii2-user/zipball/891fe6c3957bde7f3a7893775fd304fc84140599",
+                "reference": "891fe6c3957bde7f3a7893775fd304fc84140599",
                 "shasum": ""
             },
             "require": {
-                "weison-tech/yii2-authclient": "2.3.0.1",
                 "yiisoft/yii2": "~2.0",
+                "yiisoft/yii2-authclient": "~2.0",
                 "yiisoft/yii2-bootstrap": "~2.0",
                 "yiisoft/yii2-jui": "~2.0",
                 "yiisoft/yii2-swiftmailer": "~2.0"
@@ -1698,19 +1650,19 @@
             ],
             "authors": [
                 {
-                    "name": "xiaomalover",
-                    "email": "xiaomalover@gmail.com",
-                    "homepage": "http://www.itweshare.com"
+                    "name": "Dmitry Erofeev",
+                    "email": "dmeroff@gmail.com",
+                    "homepage": "http://dmeroff.ru"
                 }
             ],
             "description": "Flexible user registration and authentication module for Yii2",
             "keywords": [
                 "User management",
-                "weison-tech",
+                "dektrium",
                 "yii2",
                 "yii2-user"
             ],
-            "time": "2015-04-10 06:58:56"
+            "time": "2015-04-06 09:21:39"
         },
         {
             "name": "yiisoft/yii2",
@@ -1796,6 +1748,54 @@
             "homepage": "http://www.yiiframework.com/",
             "keywords": [
                 "framework",
+                "yii2"
+            ],
+            "time": "2015-03-01 06:22:44"
+        },
+        {
+            "name": "yiisoft/yii2-authclient",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-authclient.git",
+                "reference": "ef6634cecba6568029bf4f98b323acfac00e4a13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/ef6634cecba6568029bf4f98b323acfac00e4a13",
+                "reference": "ef6634cecba6568029bf4f98b323acfac00e4a13",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\authclient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Klimov",
+                    "email": "klimov.paul@gmail.com"
+                }
+            ],
+            "description": "External authentication via OAuth and OpenID for the Yii framework",
+            "keywords": [
+                "OpenId",
+                "auth",
+                "oauth",
                 "yii2"
             ],
             "time": "2015-03-01 06:22:44"
@@ -2017,6 +2017,45 @@
             "extra": {
                 "bower-asset-main": "dist/typeahead.bundle.js"
             }
+        },
+        {
+            "name": "c006/yii2-migration-utility",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/c006/yii2-migration-utility.git",
+                "reference": "71c923d4a22fa40a3c61724bc1df23a542c81991"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/c006/yii2-migration-utility/zipball/71c923d4a22fa40a3c61724bc1df23a542c81991",
+                "reference": "71c923d4a22fa40a3c61724bc1df23a542c81991",
+                "shasum": ""
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "c006\\utility\\migration\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Chambers",
+                    "email": "jchambers.dev@gmail.com"
+                }
+            ],
+            "description": "Automatically writes the create tables for migrations or create tables in general. Uses MySQL",
+            "keywords": [
+                "extension",
+                "migration",
+                "tables",
+                "yii2"
+            ],
+            "time": "2014-12-15 20:21:25"
         },
         {
             "name": "fzaninotto/faker",
@@ -2293,7 +2332,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "weison-tech/yii2-user": 20,
-        "weison-tech/weison-module-cms": 20
+        "weison-tech/weison-module-cms": 20,
+        "c006/yii2-migration-utility": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
