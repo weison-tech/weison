@@ -24,7 +24,7 @@ git clone git@github.com:weison-tech/weison.git
 2, Cd in your applaction root dir and run the composer update command:
 
 ~~~
-cd weison && composer update
+cd weison && sudo composer update
 ~~~
 
 3, Init you application:
