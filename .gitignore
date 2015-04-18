@@ -32,3 +32,5 @@ phpunit.phar
 composer.phar
 #sftp config file
 sftp-config.json
+#composer lock file
+composer.lock
