@@ -1,14 +1,14 @@
 <?php
 namespace api\versions\v1\controllers;
 
-use api\versions\v1\models\Post;
+use common\models\Post;
 use yii\data\ActiveDataProvider;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
 
 class PostController extends ActiveController
 {
-    public $modelClass = 'api\versions\v1\models\Post';
+    public $modelClass = 'common\models\Post';
 
     public function behaviors()
     {
