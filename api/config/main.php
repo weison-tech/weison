@@ -16,14 +16,17 @@ return [
             'class' => 'api\versions\v1\ApiModule'
         ],
         'v2' => [
-            'basePath' => '@api/modules/v2',
-            'controllerNamespace' => 'v2\controllers',
+            'class' => 'api\versions\v2\ApiModule'
         ],
     ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableSession' => false,
+        ],
+        'response' => [
+            'format' => yii\web\Response::FORMAT_JSON,
+            'charset' => 'UTF-8',
         ],
         'log' => [
             'targets' => [
@@ -45,11 +48,9 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/file','v1/share','v1/post', 'v1/comment', 'v2/post']],
-                'v1/user/login' => 'v1/user/login',
-                'v1/user/signup' => 'v1/user/signup',
-                'v1/user/edit' => 'v1/user/edit',
-                'v1/user/signin' => 'v1/user/signin',
+                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/post', 'v1/comment', 'v2/post' , 'v2/comment']],
+                'OPTIONS v1/user/login' => 'v1/user/login',
+                'POST v1/user/login' => 'v1/user/login',
                 'POST v2/user/login' => 'v2/user/login',
                 'OPTIONS v2/user/login' => 'v2/user/login',
             ],
