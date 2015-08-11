@@ -10,6 +10,20 @@ class PostController extends ActiveController
 {
     public $modelClass = 'common\models\Post';
 
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
+
+    public function init()
+    {
+        parent::init();
+        \Yii::$container->set('yii\data\Pagination',[
+             'defaultPageSize'=>2
+        ]);
+
+    }
+
     public function behaviors()
     {
         $behaviors = parent::behaviors();
