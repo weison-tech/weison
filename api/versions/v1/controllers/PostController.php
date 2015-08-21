@@ -16,20 +16,8 @@ class PostController extends BaseController
             parent::actions(),
             [
                 'index' => [
-                    'class' => 'yii\rest\IndexAction',
+                    'class' => 'api\versions\v1\actions\PostIndexAction',
                     'modelClass' => $this->modelClass,
-                    'checkAccess' => [$this, 'checkAccess'],
-                    'prepareDataProvider' => function ($action) {
-                        /* @var $model Post */
-                        $model = new $this->modelClass;
-                        $query = $model::find();
-                        $dataProvider = new ActiveDataProvider(['query' => $query]);
-
-                        $model->setAttribute('title', @$_GET['title']);
-                        $query->andFilterWhere(['like', 'title', $model->title]);
-
-                        return $dataProvider;
-                    }
                 ]
             ]
         );
