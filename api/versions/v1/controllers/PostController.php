@@ -3,35 +3,12 @@ namespace api\versions\v1\controllers;
 
 use common\models\Post;
 use yii\data\ActiveDataProvider;
-use yii\filters\auth\QueryParamAuth;
-use yii\rest\ActiveController;
+use api\common\BaseController;
 
-class PostController extends ActiveController
+class PostController extends BaseController
 {
     public $modelClass = 'common\models\Post';
 
-    public $serializer = [
-        'class' => 'yii\rest\Serializer',
-        'collectionEnvelope' => 'items',
-    ];
-
-    public function init()
-    {
-        parent::init();
-        \Yii::$container->set('yii\data\Pagination',[
-             'defaultPageSize'=>2
-        ]);
-
-    }
-
-    public function behaviors()
-    {
-        $behaviors = parent::behaviors();
-        $behaviors['authenticator'] = [
-            'class' => QueryParamAuth::className(),
-        ];
-        return $behaviors;
-    }
 
     public function actions()
     {
