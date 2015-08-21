@@ -18,6 +18,7 @@ class PostController extends BaseController
                 'index' => [
                     'class' => 'api\versions\v1\actions\PostIndexAction',
                     'modelClass' => $this->modelClass,
+                    'checkAccess' => [$this, 'checkAccess'],        
                 ]
             ]
         );
