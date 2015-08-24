@@ -18,7 +18,9 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "weison-tech/yii2-user": "dev-master"
+        "weison-tech/yii2-user": "dev-master",
+        "weison-tech/yii2-scroll-pager": "dev-master",
+        "callmez/yii2-wechat-sdk": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
