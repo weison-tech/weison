@@ -46,9 +46,5 @@ return [
 			'class' => 'dektrium\user\Module',
 			'admins' => ['admin'],
 		],
-
-		'cms' => [
-			'class' => 'weison\cms\Module',
-		], 
 	],
 ];
