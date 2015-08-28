@@ -1,12 +1,12 @@
 <?php
-namespace frontend\controllers;
+namespace wechat\controllers;
 
 use Yii;
 use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
-use frontend\models\ContactForm;
+use wechat\models\PasswordResetRequestForm;
+use wechat\models\ResetPasswordForm;
+use wechat\models\SignupForm;
+use wechat\models\ContactForm;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;

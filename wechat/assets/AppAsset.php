@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace frontend\assets;
+namespace wechat\assets;
 
 use yii\web\AssetBundle;
 

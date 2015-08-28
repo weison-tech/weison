@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend\controllers;
+namespace wechat\controllers;
 
 use Yii;
 use common\models\Post;
