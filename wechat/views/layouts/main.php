@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => '小马个人学习网',
+                'brandLabel' => '微信模块',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -34,19 +34,8 @@ AppAsset::register($this);
             ]);
             $menuItems = [
                 ['label' => '首页', 'url' => ['/site/index']],
-                // ['label' => 'About', 'url' => ['/site/about']],
-                // ['label' => 'Contact', 'url' => ['/site/contact']],
             ];
-            if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => '注 册', 'url' => ['/user/registration/register']];
-                $menuItems[] = ['label' => '登 录', 'url' => ['/user/security/login']];
-            } else {
-                $menuItems[] = [
-                    'label' => '退 出 (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/user/security/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ];
-            }
+
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
