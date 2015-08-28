@@ -7,11 +7,11 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-frontend',
+    'id' => 'app-wechat',
     'name' => 'IT自学分享网',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'controllerNamespace' => 'frontend\controllers',
+    'controllerNamespace' => 'wechat\controllers',
     'modules' => [
         'user' => [
             // following line will restrict access to admin page
