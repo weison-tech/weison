@@ -9,7 +9,7 @@ $this->title = '小马个人自学网站';
 
         <p class="lead">只有不断强大自己才能对家庭乃至社会有所贡献.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">学习YII</a></p>
+        <p><a class="btn btn-lg btn-success" href="http://blog.itweshare.com" target="_blank">我的博客</a></p>
     </div>
 
     <!-- <div class="body-content">
