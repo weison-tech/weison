@@ -32,10 +32,11 @@ return [
             'errorAction' => 'site/error',
         ],
         'wechat' => [
-            'class' => 'callmez\wechat\sdk\Wechat',
-            'appId' => '微信公众平台中的appid',
-            'appSecret' => '微信公众平台中的secret',
-            'token' => '微信服务器对接您的服务器验证token'
+            'class' => 'callmez\wechat\sdk\MpWechat',
+            'appId' => 'wx7371ede41d852a9f',
+            'appSecret' => 'f72150ab2ea4baacefca7d8e57dd21c4',
+            'token' => 'itweshare',
+            'encodingAesKey' => 'RkbpKBhuxVEkjQSeAGgv1jSkFaAa3iMinMERxk7tZMO',
         ],
     ],
     'params' => $params,
