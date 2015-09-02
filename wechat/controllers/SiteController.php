@@ -15,15 +15,15 @@ class SiteController extends Controller
 
 	public function actionIndex()
 	{
-		//认证
+		//认证(此方法主要用在公众号后台配置URL时验证使用)
 		if(isset($_GET["echostr"])){
 			$this->valid();
 		}
-		print_r(Yii::$app->wechat->getUserInfo("onz-xjnM8pZqSZ5-hrpmooQk7orY"));
-		//消息接收
+
+        //消息接收(微信公众号收到用户信息后，会post $GLOBALS["HTTP_RAW_POST_DATA"]这个参数，把信息放在里面)
 		if(isset($GLOBALS["HTTP_RAW_POST_DATA"])){
 			$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
-			//$this->logResult($postStr, Logger::LEVEL_INFO); //保存用户发送的信息到log表，方便调试
+			//$this->logResult($postStr, Logger::LEVEL_INFO); //保存用户发送的信息体到log到runtime文件夹下一，wechat.log文件里，方便调试
 			if (!empty($postStr)){
                 /* libxml_disable_entity_loader is to prevent XML eXternal Entity Injection,
                    the best way is to check the validity of xml by yourself */
