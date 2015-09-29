@@ -26,31 +26,42 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => '小马个人学习网',
+                'brandLabel' => Yii::t('frontend', 'IT share'),
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
                 ],
             ]);
             $menuItems = [
-                ['label' => '首页', 'url' => ['/site/index']],
+                ['label' => Yii::t('common', 'Home'), 'url' => ['/site/index']],
                 // ['label' => 'About', 'url' => ['/site/about']],
                 // ['label' => 'Contact', 'url' => ['/site/contact']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => '注 册', 'url' => ['/user/registration/register']];
-                $menuItems[] = ['label' => '登 录', 'url' => ['/user/security/login']];
+                $menuItems[] = ['label' => Yii::t('common', 'Register'), 'url' => ['/user/registration/register']];
+                $menuItems[] = ['label' => Yii::t('common', 'Login'), 'url' => ['/user/security/login']];
             } else {
                 $menuItems[] = [
-                    'label' => '退 出 (' . Yii::$app->user->identity->username . ')',
+                    'label' => Yii::t('common', 'Logout').'(' . Yii::$app->user->identity->username . ')',
                     'url' => ['/user/security/logout'],
                     'linkOptions' => ['data-method' => 'post']
                 ];
             }
+            $menuItems[] = [
+                'label'=>Yii::t('common', 'Language'),
+                'items'=>array_map(function ($code) {
+                    return [
+                        'label' => Yii::$app->params['availableLocales'][$code],
+                        'url' => ['/site/set-locale', 'locale'=>$code],
+                        'active' => Yii::$app->language === $code
+                    ];
+                }, array_keys(Yii::$app->params['availableLocales']))
+            ];
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => $menuItems,
             ]);
+
             NavBar::end();
         ?>
 

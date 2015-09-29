@@ -9,4 +9,8 @@ return [
     'perRateLimit'=>30,
     'maxGetRateLimit'=>2,
     'perGetRateLimit'=>1,
+    'availableLocales'=>[
+    	'zh-CN'=>'中文(简体)',
+        'en-US'=>'English (US)',
+    ],
 ];
