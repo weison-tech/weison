@@ -11,6 +11,6 @@ return [
     'perGetRateLimit'=>1,
     'availableLocales'=>[
     	'zh-CN'=>'中文(简体)',
-        'en-US'=>'English (US)',
+        'en'=>'English',
     ],
 ];
