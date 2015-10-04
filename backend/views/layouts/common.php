@@ -120,7 +120,7 @@ $bundle = BackendAsset::register($this);
                             <?php echo Yii::$app->formatter->asDatetime(time()) ?>
                         </a>
                     </div>
-                </div>identity->username
+                </div>
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <?php echo Menu::widget([
                     'options'=>['class'=>'sidebar-menu'],

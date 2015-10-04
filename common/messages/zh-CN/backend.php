@@ -84,4 +84,5 @@ return [
 	'Error #{id}' => '错误 #{id}',
 	'Delete' => '删除',
 	'IT We Share Admin' => 'IT自学网管理后台',
+	'Main' => '控制面板',
 ];
