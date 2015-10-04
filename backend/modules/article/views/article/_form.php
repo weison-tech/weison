@@ -1,7 +1,7 @@
 <?php
 
 use trntv\filekit\widget\Upload;
-use trntv\yii\datetime\DateTimeWidget;
+use kartik\datetime\DateTimePicker;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
@@ -73,12 +73,18 @@ use yii\bootstrap\ActiveForm;
     <?php echo $form->field($model, 'status')->checkbox() ?>
 
     <?php
-        echo $form->field($model, 'published_at')->widget(
-            DateTimeWidget::className(),
-            [
-                'phpDatetimeFormat' => 'yyyy-MM-dd\'T\'HH:mm:ssZZZZZ'
+        if($model->published_at){
+            $model->published_at = date('Y-m-d H:i:s',$model->published_at);
+        }else{
+            $model->published_at = date('Y-m-d H:i:s');
+        }
+        echo $form->field($model, 'published_at')->widget(DateTimePicker::classname(), [
+            'options' => ['placeholder' => yii::t('backend','Published Time ...')],
+            'pluginOptions' => [
+                'autoclose' => true,
+                'pickerPosition' => 'top-right',
             ]
-        )
+        ]);
     ?>
 
     <div class="form-group">
