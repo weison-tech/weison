@@ -30,9 +30,12 @@ class LocaleBehavior extends Behavior
      */
     public function beforeRequest()
     {
-        $userLocale = Yii::$app->language;
-        $cookieLocale = Yii::$app->getRequest()->getCookies()->getValue($this->cookieName);
-        $userLocale = $cookieLocale ? $cookieLocale : $userLocale;
-        Yii::$app->language = $userLocale;
+        //ignore console request.
+        if(!Yii::$app->request->isConsoleRequest){
+            $userLocale = Yii::$app->language;
+            $cookieLocale = Yii::$app->getRequest()->getCookies()->getValue($this->cookieName);
+            $userLocale = $cookieLocale ? $cookieLocale : $userLocale;
+            Yii::$app->language = $userLocale;
+        }
     }
 }

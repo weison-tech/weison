@@ -48,7 +48,7 @@ return [
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/post', 'v1/comment', 'v2/post' , 'v2/comment']],
+                ['class' => 'yii\rest\UrlRule', 'controller' => ['v1/article', 'v2/article']],
                 'OPTIONS v1/user/login' => 'v1/user/login',
                 'POST v1/user/login' => 'v1/user/login',
                 'POST v2/user/login' => 'v2/user/login',

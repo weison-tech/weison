@@ -7,6 +7,23 @@ return [
 			'class' => 'yii\caching\FileCache',
 		],
 
+		'log' => [
+            'traceLevel' => YII_DEBUG ? 3 : 0,
+            'targets' => [
+                'db'=>[
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['error', 'warning'],
+                    'except'=>['yii\web\HttpException:*', 'yii\i18n\I18N\*'],
+                    'prefix'=>function () {
+                        $url = !Yii::$app->request->isConsoleRequest ? Yii::$app->request->getUrl() : null;
+                        return sprintf('[%s][%s]', Yii::$app->id, $url);
+                    },
+                    'logVars'=>[],
+                    'logTable'=>'{{%system_log}}'
+                ]
+            ],
+        ],
+
 		'authClientCollection' => [
 			    'class' => yii\authclient\Collection::className(),
 			    'clients' => [
@@ -40,6 +57,10 @@ return [
 		    ],
 		],
 
+		'keyStorage' => [
+            'class' => 'common\components\keyStorage\KeyStorage'
+        ],
+
 		'i18n' => [
             'translations' => [
                 'app'=>[
@@ -57,6 +78,19 @@ return [
                     //'on missingTranslation' => ['\backend\modules\i18n\Module', 'missingTranslation']
                 ],
             ],
+        ],
+
+        'fileStorage' => [
+            'class' => '\trntv\filekit\Storage',
+            'baseUrl' => 'http://storage.itweshare.com/uploads',
+            'filesystem' => [
+                'class' => 'common\components\filesystem\LocalFlysystemBuilder',
+                'path' => '@storage/uploads'
+            ],
+            'as log' => [
+                'class' => 'common\behaviors\FileStorageLogBehavior',
+                'component' => 'fileStorage'
+            ]
         ],
 
 	],

@@ -17,8 +17,14 @@ return [
             // following line will restrict access to admin page
             'as backend' => 'dektrium\user\filters\BackendFilter',
         ],
+        'article' => [
+            'class' => 'backend\modules\article\Module',
+        ],
+        'system' => [
+            'class' => 'backend\modules\system\Module',
+        ],
     ],
-    'components' => [        
+    'components' => [
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -33,4 +39,7 @@ return [
         ],
     ],
     'params' => $params,
+    'as layoutFilter' => [
+        'class' => 'backend\behaviors\LayoutBehavior',
+    ],
 ];
