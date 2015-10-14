@@ -42,8 +42,8 @@ $ php yii migrate/up --migrationPath=@vendor/weison-tech/yii2-user/migrations
 ~~~
 other config for user module please see at  https://github.com/weison-tech/yii2-user/blob/master/docs/getting-started.md
 
-6, Update database schema for your api module
+6, Update database schema for your application
 
 ~~~
-php yii migrate/up --migrationPath=@api/migrations
+php yii migrate
 ~~~
