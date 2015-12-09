@@ -43,6 +43,20 @@ return [
                 'application/json' => 'yii\web\JsonParser',
             ],
         ],
+        'response' => [
+            'class' => 'yii\web\Response',
+            'on beforeSend' => function ($event) {
+                $response = $event->sender;
+                //redeclare the format of error response
+                //except 404 error
+                if($response->statusCode != 200 && $response->statusCode != 404){
+                    $response->data = [
+                        'code' => $response->statusCode,
+                        'msg' => $response->statusText,
+                    ];
+                }
+            },
+        ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'enableStrictParsing' => true,
